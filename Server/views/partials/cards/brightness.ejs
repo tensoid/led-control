@@ -1,0 +1,12 @@
+<div class="card">
+  
+  <span class="card-title">BRIGHTNESS</span>
+
+  <div class="slider">
+    <output class="rangevalue" id="brightness"><%- data.client.brightness %></output>
+    <input name=brightness type = "range" min="0" max="100" 
+           value="<%- data.client.brightness %>" 
+           oninput="brightness.value=value; API.brightness(parseInt(brightness.value))"/>
+  </div>
+
+</div>

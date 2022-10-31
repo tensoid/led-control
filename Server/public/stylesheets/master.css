@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap');
+
+@import "/stylesheets/nav.css";
+
+
+* {
+  font-family: 'Titillium Web', sans-serif !important;
+  color: var(--white) !important;
+  text-transform: uppercase !important;
+}
+
+body {
+  overflow-x: hidden;
+  font-size: 16px;
+  background-color: var(--gray);
+}
+
+
+/* Color Palette */
+:root {
+  --white: #FFFFFA;
+  --gray: #515052;
+  --dark-gray: #333138;
+  --black: #000103;
+  --red: #FF312E;
+}
+

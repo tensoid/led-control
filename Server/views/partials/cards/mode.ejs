@@ -1,0 +1,89 @@
+<div class="card">
+  
+  <span class="card-title">MODE</span>
+
+  <!--Create dropdown menu-->
+  <div class="mode-dropdown">
+    <select name="mode" id="mode" oninput="onModeChange(mode.value); API.profile({ property: `mode`, newValue: mode.value, profileName: document.querySelector(`select#profile`).value, action: `alter` });">
+      <% data.modes.forEach(function(mode){ %>
+        <% if(mode == data.client.profile.mode) { %>
+          <option selected value="<%- mode %>"><%- mode %></option>
+        <% } else { %>
+        <option value="<%- mode %>"><%- mode %></option>
+        <% } %>
+      <% }); %>
+    </select>
+  </div>
+
+
+  <!-- Static Options -->
+  <div class="static mode-options inactive">
+    <div class="color-option">
+      <span>Color: </span>
+      <%- include("../color-picker.ejs", {propertyName: "static"}) %>
+    </div>
+  </div>
+
+
+  <!-- Visualizer Options -->
+  <div class="visualizer mode-options inactive">
+    <div class="options-row">
+
+      <div class="color-option">
+        <span>Base: </span>
+        <%- include("../color-picker.ejs", {propertyName: "visualizer.baseColor"}) %>
+      </div>
+      
+      <div class="color-option">
+        <span>Peak: </span>
+        <%- include("../color-picker.ejs", {propertyName: "visualizer.peakColor"}) %>
+      </div>
+
+    </div>
+
+    <br>
+    <br>
+
+    <span>minToLowMul: </span>
+    <%- include("../slider.ejs", {
+      propertyName: "visualizer.minToLowMul", 
+      min: 0, max: 1000, 
+      value: data.client.profile.visualizer.minToLowMul 
+    }) %>
+
+    <br>
+    <br>
+    <br>
+
+    <span>amplitudeMul: </span>
+    <%- include("../slider.ejs", {
+      propertyName: "visualizer.amplitudeMul", 
+      min: 0, max: 200, 
+      value: data.client.profile.visualizer.amplitudeMul 
+    }) %>
+
+
+    <br>
+    <br>
+    <br>
+
+    <span>builddownMul: </span>
+    <%- include("../slider.ejs", {
+      propertyName: "visualizer.builddownMul", 
+      min: 0, max: 100, 
+      value: data.client.profile.visualizer.builddownMul 
+    }) %>
+
+    <br>
+    <br>
+    <br>
+
+    <span>kickDetectThreshold: </span>
+    <%- include("../slider.ejs", {
+      propertyName: "visualizer.kickDetectThreshold", 
+      min: 0, max: 200, 
+      value: data.client.profile.visualizer.kickDetectThreshold 
+    }) %>
+  </div>
+
+</div>

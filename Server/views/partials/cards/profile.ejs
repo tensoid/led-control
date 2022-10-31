@@ -1,0 +1,30 @@
+<div class="card">
+  
+  <span class="card-title">PROFILE</span>
+
+  <!-- Profile Selection -->
+  <div class="profile-select">
+    <span>Active</span>
+    <div class="profile-dropdown">
+      <select id="profile" oninput="setProfile()">
+        <% data.profiles.forEach(function(profile){ %>
+          <% if(profile == data.client.profile.name) { %>
+            <option selected value="<%- profile %>"><%- profile %></option>
+          <% } else { %>
+          <option value="<%- profile %>"><%- profile %></option>
+          <% } %>
+        <% }); %>
+      </select>
+    </div>
+    <span class="inactive" id="unsaved-changes">&nbsp;&nbsp;&nbsp;( unsaved changes )</span>
+  </div>
+
+  <br>
+  <br>
+
+  <!-- Button area-->
+  <div class="button-area">
+    <button id="new-profile" class="card-button" onclick="newProfile()">New</button>
+    <button id="delete-profile" class="card-button" onclick="deleteProfile()">Delete</button>
+  </div>
+</div>

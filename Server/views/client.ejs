@@ -1,0 +1,22 @@
+<link rel="stylesheet" href="/stylesheets/cards.css">
+<link rel="stylesheet" href="/stylesheets/slider.css">
+<script src="/socket.io/socket.io.js"></script>
+<script defer src="/javascripts/mode-card-manager.js"></script>
+<script defer src="/javascripts/profile-card-manager.js"></script>
+<script defer src="/javascripts/socket-client.js"></script>
+
+
+<!-- Cards -->
+<div class="row"> 
+
+  <div class="column">
+    <%- include("./partials/cards/profile.ejs") %>
+    <%- include("./partials/cards/brightness.ejs") %>
+  </div>
+
+  <div class="column">
+    <%- include("./partials/cards/mode.ejs") %>
+  </div>
+
+</div>  
+

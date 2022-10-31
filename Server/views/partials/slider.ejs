@@ -1,0 +1,10 @@
+<div class="slider">
+  <output class="rangevalue" id="<%- propertyName.split('.')[propertyName.split('.').length-1] %>"><%- value %></output>
+  <input name=<%- propertyName %> type = "range" min="<%- min %>" max="<%- max %>" 
+         value="<%- value * 100%>" 
+         oninput="<%- propertyName.split('.')[propertyName.split('.').length-1] %>.value = parseInt(value) / 100; API.profile({property: `<%- propertyName %>`, newValue: parseInt(value) / 100,profileName: document.querySelector(`select#profile`).value,action: `alter`});"/>
+</div>
+
+
+
+

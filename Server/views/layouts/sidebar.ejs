@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title><%= title %></title>
+
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  
+  <link rel="stylesheet" href="/stylesheets/master.css">
+
+  <script src='./javascripts/utils.js'></script>
+
+</head>
+<body>
+  
+<div id="viewport">
+  <!-- Sidebar -->
+  <div id="sidebar">
+    <header>
+      <a href="#">LED CONTROLLER</a>
+    </header>
+    <ul class="nav led-clients">
+      <% data.clients.forEach(function(client){ %>
+        <li class="led-client">
+          <a href="/client?id=<%- encodeURI(client.client) %>">
+            <%= client.client %>
+          </a>
+        </li>
+      <% }); %>
+    </ul>
+  </div>
+  <!-- Content -->
+  <div id="content">
+    <nav class="navbar navbar-default topbar">
+      <a href="https://github.com/tensoid">MADE BY TENSOID</a>
+    </nav>
+    <div class="led-config">
+      <%- body %>
+    </div>
+  </div>
+</div>
+</body>
+</html>

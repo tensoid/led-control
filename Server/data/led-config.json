@@ -1,0 +1,73 @@
+{
+  "modes": [
+    "visualizer",
+    "static"
+  ],
+  "profiles": [
+    {
+      "name": "default",
+      "profile": {
+        "mode": "static",
+        "static": {
+          "r": 255,
+          "g": 0,
+          "b": 0
+        },
+        "visualizer": {
+          "baseColor": {
+            "r": 64,
+            "g": 224,
+            "b": 208
+          },
+          "peakColor": {
+            "r": 255,
+            "g": 165,
+            "b": 0
+          },
+          "minToLowMul": 3,
+          "amplitudeMul": 0.42,
+          "builddownMul": 0.1,
+          "kickDetectThreshold": 0.9
+        },
+        "name": "default"
+      }
+    },
+    {
+      "name": "spotify-max",
+      "profile": {
+        "mode": "visualizer",
+        "static": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        },
+        "visualizer": {
+          "baseColor": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+          },
+          "peakColor": {
+            "r": 127,
+            "g": 56,
+            "b": 161
+          },
+          "minToLowMul": 7.93,
+          "amplitudeMul": 0.16,
+          "builddownMul": 0.6,
+          "kickDetectThreshold": 0.9
+        },
+        "name": "spotify-max"
+      }
+    }
+  ],
+  "currentProfiles": [
+    {
+      "client": "table",
+      "custom": false,
+      "active": true,
+      "brightness": 100,
+      "profile": "spotify-max"
+    }
+  ]
+}
